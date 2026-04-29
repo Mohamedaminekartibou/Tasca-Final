@@ -6,42 +6,62 @@
     <title>Document</title>
 </head>
 <body>
-    <nav>
+    <aside class="lado">
         <h2>Menú</h2>
+        <nav>
         <ul>
             <li><a href="index.html">Llistat d'Activitats</a></li>
             <li><a href="crear-tasca.html">Crear Tasca</a></li>
             <li><a href="categories.html">Gestió de Categories</a></li>
         </ul>
-    </nav>
+        </nav>
+    </aside>
 
-    <aside >
-        <h1>Crear Tasca</h1>
 
-        <form>
-            <label>Títol:</label>
-            <input type="text">
+    <section class="content">
 
-            <label>Descripció:</label>
-            <textarea></textarea>
+        <h1>Crear Nova Tasca</h1>
 
-            <label>Data:</label>
-            <input type="date">
+        <section class="tascaNov">
+            <form class="form">
 
-            <label>Categoria:</label>
-            <select>
-                <option>Estudis</option>
-            </select>
+                <div class="field">
+                    <label>Títol</label>
+                    <input type="text">
+                </div>
 
-            <label>Prioritat:</label>
-            <select>
-                <option>Baixa</option>
-                <option>Mitjana</option>
-                <option>Alta</option>
-            </aside>
+                <div class="field">
+                    <label>Descripció</label>
+                    <textarea></textarea>
+                </div>
 
-            <button type="submit">Guardar</button>
-        </form>
+                <div class="field">
+                    <label>Data</label>
+                    <input type="date">
+                </div>
+
+                <div class="field">
+                    <label>Categoria</label>
+                    <select>
+                        <option>Estudis</option>
+                        <option>Treball</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Prioritat</label>
+                    <select>
+                        <option>Baixa</option>
+                        <option>Mitjana</option>
+                        <option>Alta</option>
+                    </select>
+                </div>
+
+                <button class="btn">Guardar</button>
+
+            </form>
+        </section>
+
     </section>
 
 
