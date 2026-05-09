@@ -1,45 +1,45 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Categories</title>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <aside class="lado">
-            <h2>Menú</h2>
-            <nav>
-            <ul>
-                <li><a href="index.html">Llistat d'Activitats</a></li>
-                <li><a href="crear-tasca.html">Crear Tasca</a></li>
-                <li><a href="categories.html">Gestió de Categories</a></li>
-            </ul>
-            </nav>
-        </aside>
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="lado">
+    <h2>Menú</h2>
+    <nav>
+      <ul>
+        <li><a href="index.html">Llistat d'Activitats</a></li>
+        <li><a href="crear-tasca.html">Crear Tasca</a></li>
+        <li><a href="categories.html">Gestió de Categories</a></li>
+      </ul>
+    </nav>
+  </aside>
 
-
-    <section class="contenido">
-
-        <h1>Gestió de Categories</h1>
-
-        <section class="tascaNov">
-            <label>Nova Categoria:</label>
-            <input type="text" id="inputCategoria">
-
-            <label>Color de la Categoria:</label>
-            <input type="color" id="colorCategoria">
-
-            <button onclick="afegirCategoria()">Afegir Categoria</button>
-        </section>
-
-        <section class="tascaNov">
-            <ul id="llistaCategories"></ul>
-        </section>
-
+  <section class="contenido">
+    <h1>Gestió de Categories</h1>
+    <section class="tascaNov">
+      <div class="field">
+        <label for="inputCategoria">Nova Categoria</label>
+        <input type="text" id="inputCategoria" placeholder="Nom de la categoria...">
+      </div>
+      <div class="field">
+        <label for="colorCategoria">Color</label>
+        <input type="color" id="colorCategoria" value="#2d6cdf">
+      </div>
+      <button id="btnAfegir">Afegir Categoria</button>
     </section>
 
-    <script src="js/categories.js"></script>
+    <section class="tascaNov">
+      <h2>Categories guardades</h2>
+      <ul id="llistaCategories"></ul>
+    </section>
+  </section>
 
-    </body>
-    </html>
+  <script src="js/storage.js"></script>
+  <script src="js/models.js"></script>
+  <script src="js/categories.js"></script>
+</body>
+</html>
