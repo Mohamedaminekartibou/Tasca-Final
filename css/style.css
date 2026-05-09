@@ -1,81 +1,261 @@
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    background: #f4f6fb;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  background: #f4f6fb;
+  min-height: 100vh;
 }
 
 .lado {
-    width: 220px;
-    height: 100vh;
-    background: #2d6cdf;
-    color: white;
-    padding: 20px;
+  width: 220px;
+  min-height: 100vh;
+  background: #2d6cdf;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
-
+.lado h2 {
+  margin-top: 0;
+}
 .lado ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
-
 .lado li {
-    margin: 10px 0;
+  margin: 12px 0;
 }
-
 .lado a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  padding: 6px 8px;
+  border-radius: 5px;
+  transition: background 0.2s;
+}
+.lado a:hover {
+  background: rgba(255,255,255,0.2);
 }
 
-
+/* ── Contingut ── */
 .contenido {
-    flex: 1;
-    padding: 30px;
-    max-width: 700px;
-    margin: 0 auto;
+  flex: 1;
+  padding: 30px;
+  max-width: 780px;
 }
-
 
 .tascaNov {
-    background: white;
-    padding: 20px;
-    margin-top: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: white;
+  padding: 20px;
+  margin-top: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-
+/* ── Formulari ── */
 .form .field {
-    margin-bottom: 10px;
+  margin-bottom: 12px;
+}
+label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #444;
+}
+input[type="text"],
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 0.95rem;
+}
+input[type="color"] {
+  padding: 2px;
+  height: 36px;
+  width: 60px;
+  margin-top: 4px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+textarea {
+  resize: vertical;
 }
 
-input, textarea, select {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-
+/* ── Botons ── */
 button, .btn {
-    background: #2d6cdf;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
+  background: #2d6cdf;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  margin-top: 8px;
 }
-
 button:hover {
-    background: #1f4fbf;
+  background: #1f4fbf;
+}
+.btn-eliminar {
+  background: #e74c3c;
+  padding: 5px 10px;
+  font-size: 0.85rem;
+  margin-top: 0;
+}
+.btn-eliminar:hover {
+  background: #c0392b;
 }
 
-
+/* ── Llistat de tasques ── */
 ul {
-    margin-top: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+.tasca-item {
+  background: white;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.08);
+  border-left: 4px solid #2d6cdf;
+}
+.tasca-item.realitzada {
+  border-left-color: #27ae60;
+  opacity: 0.75;
+}
+.tasca-cap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.tasca-titol {
+  font-weight: bold;
+  font-size: 1rem;
+  flex: 1;
+}
+.tasca-info {
+  margin: 6px 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+.tasca-info p {
+  margin: 2px 0;
+}
+.tasca-accions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+  font-size: 0.9rem;
 }
 
-li {
-    margin: 8px 0;
+/* ── Badges ── */
+.badge-prioritat {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: bold;
+  color: white;
+}
+.prioritat-alta    { background: #e74c3c; }
+.prioritat-mitjana { background: #f39c12; }
+.prioritat-baixa   { background: #27ae60; }
+
+.badge-cat {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+}
+
+/* ── Categories ── */
+.cat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+.cat-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.cat-nom {
+  flex: 1;
+  font-weight: bold;
+}
+.buit {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* ── Gràfic ── */
+.chart-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-top: 15px;
+  max-width: 700px;
+  position: relative;
+  height: 320px;
+}
+#grafica {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ── Errors ── */
+.error-msg {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin: 6px 0;
+}
+
+/* ── Top bar (botó nova + importació) ── */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 16px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.import-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.import-bar input {
+  width: 240px;
+  margin-top: 0;
+}
+.import-bar button {
+  margin-top: 0;
+  white-space: nowrap;
+}
+
+#btnEsborrar {
+  background: #636e72;
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  margin-top: 0;
+}
+#btnEsborrar:hover {
+  background: #2d3436;
 }
