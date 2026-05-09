@@ -1,70 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Tasca</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Tasca</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <aside class="lado">
-        <h2>Menú</h2>
-        <nav>
-        <ul>
-            <li><a href="index.html">Llistat d'Activitats</a></li>
-            <li><a href="crear-tasca.html">Crear Tasca</a></li>
-            <li><a href="categories.html">Gestió de Categories</a></li>
-        </ul>
-        </nav>
-    </aside>
+  <aside class="lado">
+    <h2>Menú</h2>
+    <nav>
+      <ul>
+        <li><a href="index.html">Llistat d'Activitats</a></li>
+        <li><a href="crear-tasca.html">Crear Tasca</a></li>
+        <li><a href="categories.html">Gestió de Categories</a></li>
+      </ul>
+    </nav>
+  </aside>
 
-
-    <section class="contenido">
-
-        <h1>Crear Nova Tasca</h1>
-
-        <section class="tascaNov">
-            <form class="form">
-
-                <div class="field">
-                    <label>Títol</label>
-                    <input type="text">
-                </div>
-
-                <div class="field">
-                    <label>Descripció</label>
-                    <textarea></textarea>
-                </div>
-
-                <div class="field">
-                    <label>Data</label>
-                    <input type="date">
-                </div>
-
-                <div class="field">
-                    <label>Categoria</label>
-                    <select>
-                        <option>Estudis</option>
-                        <option>Treball</option>
-                    </select>
-                </div>
-
-                <div class="field">
-                    <label>Prioritat</label>
-                    <select>
-                        <option>Baixa</option>
-                        <option>Mitjana</option>
-                        <option>Alta</option>
-                    </select>
-                </div>
-
-                <button class="btn">Guardar</button>
-
-            </form>
-        </section>
-
+  <section class="contenido">
+    <h1>Crear Nova Tasca</h1>
+    <section class="tascaNov">
+      <form id="form-tasca" class="form">
+        <div class="field">
+          <label for="titol">Títol *</label>
+          <input type="text" id="titol" placeholder="Escriu el títol...">
+        </div>
+        <div class="field">
+          <label for="descripcio">Descripció *</label>
+          <textarea id="descripcio" rows="3" placeholder="Descriu la tasca..."></textarea>
+        </div>
+        <div class="field">
+          <label for="data">Data *</label>
+          <input type="date" id="data">
+        </div>
+        <div class="field">
+          <label for="categoria">Categoria *</label>
+          <select id="categoria"></select>
+        </div>
+        <div class="field">
+          <label for="prioritat">Prioritat *</label>
+          <select id="prioritat">
+            <option value="Baixa">Baixa</option>
+            <option value="Mitjana">Mitjana</option>
+            <option value="Alta">Alta</option>
+          </select>
+        </div>
+        <p id="error-msg" class="error-msg" style="display:none"></p>
+        <button type="submit" class="btn">Guardar Tasca</button>
+      </form>
     </section>
+  </section>
 
-
+  <script src="js/storage.js"></script>
+  <script src="js/models.js"></script>
+  <script src="js/form-tasca.js"></script>
 </body>
 </html>
