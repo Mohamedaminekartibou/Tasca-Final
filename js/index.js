@@ -127,7 +127,6 @@ function eliminarTasca(id) {
   renderLlistat();
 }
 
-// Events
 document.getElementById('btnNova').addEventListener('click', () => {
   window.location.href = 'crear-tasca.html';
 });
@@ -137,7 +136,6 @@ document.getElementById('btnPujar').addEventListener('click', () => {
   importarFitxerManual(nom);
 });
 
-// Permet prémer Enter a l'input
 document.getElementById('inputFitxer').addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     importarFitxerManual(e.target.value);
