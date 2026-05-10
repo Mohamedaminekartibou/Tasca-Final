@@ -200,7 +200,6 @@ ul {
   font-style: italic;
 }
 
-/* ── Gràfic ── */
 .chart-container {
   background: white;
   padding: 20px;
@@ -216,14 +215,12 @@ ul {
   height: 100% !important;
 }
 
-/* ── Errors ── */
 .error-msg {
   color: #e74c3c;
   font-size: 0.9rem;
   margin: 6px 0;
 }
 
-/* ── Top bar (botó nova + importació) ── */
 .top-bar {
   display: flex;
   align-items: center;
