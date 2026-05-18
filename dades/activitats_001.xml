@@ -1,1 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tasques>
 
+  <tasca id="task-001">
+
+    <titol>Crea l'estructura de carpetes del projecte</titol>
+    <descripcio>Organitza els fitxers: HTML, CSS, JS, dades...</descripcio>
+    <data>2025-04-15</data>
+
+    <categoria>
+      <nom>Organització</nom>
+      <color>#f7df1e</color>
+    </categoria>
+
+    <prioritat>Alta</prioritat>
+    <realitzada>false</realitzada>
+
+  </tasca>
+  <tasca id="task-002">
+    <titol>Dissenya la interfície d'index.html</titol>
+    <descripcio>Mostra la llista de tasques i afegeix el contenidor del gràfic.</descripcio>
+    <data>2025-04-16</data>
+    <categoria>
+      <nom>Disseny</nom>
+      <color>#e5989b</color>
+    </categoria>
+    <prioritat>Mitjana</prioritat>
+    <realitzada>false</realitzada>
+  </tasca>
+
+  <tasca id="task-003">
+
+    <titol>Implementa el formulari a crear-tasca.html</titol>
+    <descripcio>Inclou validació dels camps i guardat a localStorage.</descripcio>
+    <data>2025-04-17</data>
+
+    <categoria>
+      <nom>Formularis</nom>
+      <color>#6c5ce7</color>
+    </categoria>
+
+    <prioritat>Alta</prioritat>
+    <realitzada>false</realitzada>
+    
+  </tasca>
+
+  <tasca id="task-004">
+
+    <titol>Permet marcar les tasques com a fetes</titol>
+    <descripcio>Afegir checkbox a index.html i actualitzar l'estat.</descripcio>
+    <data>2025-04-18</data>
+
+    <categoria>
+      <nom>Funcionalitat</nom>
+      <color>#00cec9</color>
+    </categoria>
+
+    <prioritat>Alta</prioritat>
+    <realitzada>false</realitzada>
+
+  </tasca>
+
+  <tasca id="task-005">
+
+    <titol>Crea el gràfic amb Chart.js</titol>
+    <descripcio>Mostrar les tasques fetes per mes en format bar chart.</descripcio>
+    <data>2025-04-20</data>
+
+    <categoria>
+      <nom>Visualització</nom>
+      <color>#fab1a0</color>
+    </categoria>
+
+    <prioritat>Alta</prioritat>
+    <realitzada>false</realitzada>
+
+  </tasca>
+</tasques>
