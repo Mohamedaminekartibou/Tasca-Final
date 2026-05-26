@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="tasques">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="tasca" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="titol" type="xs:string"/>
+              <xs:element name="descripcio" type="xs:string"/>
+              <xs:element name="data" type="xs:date"/>
+              <xs:element name="categoria">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="nom" type="xs:string"/>
+                    <xs:element name="color" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="prioritat" type="xs:string"/>
+              <xs:element name="realitzada" type="xs:boolean"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
