@@ -38,8 +38,38 @@ async function importarFitxerManual(nomFitxer) {
   try {
     const res = await fetch(ruta);
     if (!res.ok) throw new Error('No trobat');
-    const dades = await res.json();
 
+    let dades = [];
+    if (nomFitxer.toLowerCase().endsWith('.xml')) {
+      const text = await res.text();
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(text, "text/xml");
+      
+      if (xmlDoc.querySelector("parsererror")) {
+        throw new Error("El fitxer XML no és vàlid");
+      }
+      
+      const tasquesNodes = xmlDoc.querySelectorAll('tasca');
+      tasquesNodes.forEach(tascaNode => {
+        dades.push({
+          id: tascaNode.getAttribute('id'),
+          titol: tascaNode.querySelector('titol')?.textContent || '',
+          descripcio: tascaNode.querySelector('descripcio')?.textContent || '',
+          data: tascaNode.querySelector('data')?.textContent || '',
+          categoria: {
+            
+            nom: tascaNode.querySelector('categoria nom')?.textContent || '',
+            color: tascaNode.querySelector('categoria color')?.textContent || '#ccc'
+          },
+          prioritat: tascaNode.querySelector('prioritat')?.textContent || 'Mitjana',
+          realitzada: tascaNode.querySelector('realitzada')?.textContent === 'true'
+        });
+      });
+    } else {
+      dades = await res.json();
+    }
+
+    
     const tasquesActuals = getTasques();
     const idsActuals = new Set(tasquesActuals.map(t => t.id));
     let noves = 0;
